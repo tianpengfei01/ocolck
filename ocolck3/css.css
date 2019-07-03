@@ -1,0 +1,655 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1B2335;
+}
+
+.fbc-container {
+  background-color: #1B2335;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.fbc-clock-main-wrapper {
+  position: relative;
+}
+.fbc-clock-main-wrapper:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: inset 0 0 10vw 5vw #1B2335;
+}
+.fbc-clock-main-wrapper > .fbc-line-divider-blocks {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.fbc-clock-main-wrapper > .fbc-line-divider-blocks > .fbc-block {
+  width: 4vw;
+  height: 4vw;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+}
+.fbc-clock-main-wrapper > .fbc-line-divider-blocks > .fbc-block:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  width: auto;
+  height: auto;
+  background-color: #1F2941;
+  z-index: 5;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-divider-blocks {
+  display: block;
+  width: 4vw;
+  height: auto;
+  box-sizing: border-box;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-divider-blocks > .fbc-block {
+  width: 4vw;
+  height: 4vw;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-divider-blocks > .fbc-block:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  width: auto;
+  height: auto;
+  background-color: #1F2941;
+  z-index: 5;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group {
+  width: 24vw;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks {
+  width: 12vw;
+  height: auto;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block {
+  width: 4vw;
+  height: 4vw;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  perspective: 500px;
+  overflow: visible;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  width: auto;
+  height: auto;
+  background-color: #1F2941;
+  z-index: 5;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  width: auto;
+  height: auto;
+  opacity: 0;
+  transition: all 1100ms cubic-bezier(0.28, 1.4, 0, 1);
+  transform: translate3d(0, 0, 0) rotateY(90deg);
+  z-index: 10;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(1):after {
+  transition-delay: 0ms;
+  background-color: #FFEFBD;
+  box-shadow: 0 0 25px 0 #FFEFBD;
+  background-image: linear-gradient(to bottom, #FFF6B8 0%, #FFDEA0 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(2):after {
+  transition-delay: 50ms;
+  background-color: #FFEFBD;
+  box-shadow: 0 0 25px 0 #FFEFBD;
+  background-image: linear-gradient(to bottom, #FFF6B8 0%, #FFDEA0 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(3):after {
+  transition-delay: 100ms;
+  background-color: #FFEFBD;
+  box-shadow: 0 0 25px 0 #FFEFBD;
+  background-image: linear-gradient(to bottom, #FFF6B8 0%, #FFDEA0 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(4):after {
+  transition-delay: 50ms;
+  background-color: #F7BDA2;
+  box-shadow: 0 0 25px 0 #F7BDA2;
+  background-image: linear-gradient(to bottom, #FFB99C 0%, #F79C9C 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(5):after {
+  transition-delay: 100ms;
+  background-color: #F7BDA2;
+  box-shadow: 0 0 25px 0 #F7BDA2;
+  background-image: linear-gradient(to bottom, #FFB99C 0%, #F79C9C 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(6):after {
+  transition-delay: 150ms;
+  background-color: #F7BDA2;
+  box-shadow: 0 0 25px 0 #F7BDA2;
+  background-image: linear-gradient(to bottom, #FFB99C 0%, #F79C9C 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(7):after {
+  transition-delay: 100ms;
+  background-color: #EF7B94;
+  box-shadow: 0 0 25px 0 #EF7B94;
+  background-image: linear-gradient(to bottom, #F79494 0%, #E7638C 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(8):after {
+  transition-delay: 150ms;
+  background-color: #EF7B94;
+  box-shadow: 0 0 25px 0 #EF7B94;
+  background-image: linear-gradient(to bottom, #F79494 0%, #E7638C 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(9):after {
+  transition-delay: 200ms;
+  background-color: #EF7B94;
+  box-shadow: 0 0 25px 0 #EF7B94;
+  background-image: linear-gradient(to bottom, #F79494 0%, #E7638C 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(10):after {
+  transition-delay: 150ms;
+  background-color: #CE4A84;
+  box-shadow: 0 0 25px 0 #CE4A84;
+  background-image: linear-gradient(to bottom, #E85284 0%, #A63984 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(11):after {
+  transition-delay: 200ms;
+  background-color: #CE4A84;
+  box-shadow: 0 0 25px 0 #CE4A84;
+  background-image: linear-gradient(to bottom, #E85284 0%, #A63984 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(12):after {
+  transition-delay: 250ms;
+  background-color: #CE4A84;
+  box-shadow: 0 0 25px 0 #CE4A84;
+  background-image: linear-gradient(to bottom, #E85284 0%, #A63984 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(13):after {
+  transition-delay: 200ms;
+  background-color: #862984;
+  box-shadow: 0 0 25px 0 #862984;
+  background-image: linear-gradient(to bottom, #A63984 0%, #682183 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(14):after {
+  transition-delay: 250ms;
+  background-color: #862984;
+  box-shadow: 0 0 25px 0 #862984;
+  background-image: linear-gradient(to bottom, #A63984 0%, #682183 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks > .fbc-block:nth-child(15):after {
+  transition-delay: 300ms;
+  background-color: #862984;
+  box-shadow: 0 0 25px 0 #862984;
+  background-image: linear-gradient(to bottom, #A63984 0%, #682183 100%);
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(10):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="0"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="1"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="1"] > .fbc-block:nth-child(5):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="1"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="1"] > .fbc-block:nth-child(11):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="1"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(10):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="2"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="3"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="4"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="5"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(10):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="6"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="7"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(10):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="8"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(0deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(1):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(2):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(3):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(4):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(6):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(7):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(8):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(9):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(12):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(13):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(14):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}
+.fbc-clock-main-wrapper > .fbc-clock-wrapper > .fbc-digit-group > .fbc-digit-blocks[digit-value="9"] > .fbc-block:nth-child(15):after {
+  transform: translate3d(0, 0, 0) rotateY(180deg);
+  opacity: 1;
+}

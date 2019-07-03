@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+            background-color: #000;
+            color: #fff;
+            -webkit-user-select: none;
+            -moz-user-select: -moz-none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+            margin: 10;
+            margin-top: 10;
+            padding: 0;
+            border: none;
+        }
+
+        .wrapper {
+            position: absolute;
+            width: calc(100vw - 12px);
+            height: calc(100vh - 12px);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cnv {
+            width: 80%;
+            height: 80%;
+            border: 1px solid #000000;
+            border-radius: 15px;
+            background-color: black;
+            padding: 1px;
+        }
